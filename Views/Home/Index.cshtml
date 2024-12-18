@@ -1,0 +1,201 @@
+﻿@{
+    Layout = null;
+}
+
+<script>
+    window.addEventListener("load", async () => {
+        const token = localStorage.getItem("jwtToken");
+
+        if (token) {
+            try {
+                const response = await fetch("/TokenCheck", {
+                    method: "GET",
+                    headers: { "Authorization": token }
+                });
+
+                if (response.redirected) {
+                    window.location.href = response.url;
+                }
+            } catch (error) {
+                console.error("Помилка перевірки токена:", error);
+            }
+        }
+    });
+</script>
+
+<div class="login-container">
+    <div class="login-form">
+        <h2>Вхід</h2>
+        <form id="loginForm">
+            <label for="username">Логін:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="button" id="loginButton">Увійти</button>
+        </form>
+        <p id="loginResultMessage"></p>
+    </div>
+
+    <div class="register-form">
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+            <label for="registerUsername">Логін:</label>
+            <input type="text" id="registerUsername" name="username" required />
+
+            <label for="registerPassword">Пароль:</label>
+            <input type="password" id="registerPassword" name="password" required />
+
+            <label for="isStudent">
+                <input type="checkbox" id="isStudent" name="isStudent" />
+                Студент
+            </label>
+
+            <button type="button" id="registerButton">Зареєструватися</button>
+        </form>
+        <p id="registerResultMessage"></p>
+    </div>
+</div>
+
+<script>
+    function saveToken(token) {
+        localStorage.setItem("jwtToken", token);
+    }
+
+    document.getElementById("loginButton").addEventListener("click", async () => {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const loginResultMessage = document.getElementById("loginResultMessage");
+
+        try {
+            const response = await fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                saveToken(result.token);
+                loginResultMessage.textContent = "Успішний вхід!";
+                loginResultMessage.style.color = "green";
+
+                if (result.isStudent) {
+                    window.location.href = "/studentPage";
+                } else {
+                    window.location.href = "/StudentsManagment";
+                }
+            } else {
+                loginResultMessage.textContent = "Помилка: " + result.message;
+                loginResultMessage.style.color = "red";
+            }
+        } catch (error) {
+            loginResultMessage.textContent = "Помилка: " + error.message;
+            loginResultMessage.style.color = "red";
+        }
+    });
+
+    document.getElementById("registerButton").addEventListener("click", async () => {
+        const username = document.getElementById("registerUsername").value;
+        const password = document.getElementById("registerPassword").value;
+        const isStudent = document.getElementById("isStudent").checked;
+        const registerResultMessage = document.getElementById("registerResultMessage");
+
+        try {
+            const response = await fetch("/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password, isStudent })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                saveToken(result.token);
+                registerResultMessage.textContent = "Реєстрація успішна!";
+                registerResultMessage.style.color = "green";
+
+                if (isStudent) {
+                    window.location.href = "/studentPage";
+                } else {
+                    window.location.href = "/StudentsManagment";
+                }
+            } else {
+                registerResultMessage.textContent = "Помилка: " + result.message;
+                registerResultMessage.style.color = "red";
+            }
+        } catch (error) {
+            registerResultMessage.textContent = "Помилка: " + error.message;
+            registerResultMessage.style.color = "red";
+        }
+    });
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f9;
+        color: #333;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-form, .register-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+</style>

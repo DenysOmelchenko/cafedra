@@ -1,0 +1,143 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація про студента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .student-info {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .refresh-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+            .refresh-btn:hover {
+                background-color: #0056b3;
+            }
+
+        .logout-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: #dc3545;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+            .logout-btn:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+    <button class="logout-btn" id="logoutButton">Вийти</button>
+    <div class="student-info">
+        <h1 id="studentName">Ім'я</h1>
+        <p id="studentStatus">Статус</p>
+        <p id="studentGroup">Номер групи</p>
+        <button class="refresh-btn" id="refreshButton">Оновити</button>
+    </div>
+
+    <script>
+        const statusMapping = {
+            0: "Активний",
+            1: "Очікує схвалення",
+            2: "Відрахований"
+        };
+
+        function getToken() {
+            return localStorage.getItem("jwtToken");
+        }
+
+        async function refreshStudentInfo() {
+            const token = getToken();
+
+            if (!token) {
+                alert("Токен відсутній! Будь ласка, увійдіть до системи.");
+                return;
+            }
+
+            try {
+                const response = await fetch("/studentPage/UpdateList", {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Помилка отримання даних: " + response.statusText);
+                }
+
+                const student = await response.json();
+                document.getElementById("studentName").textContent = student.name || "Не вказано";
+                const statusText = statusMapping[student.status] || "Не вказано";
+                document.getElementById("studentStatus").textContent = statusText;
+                document.getElementById("studentGroup").textContent = student.group || "Не вказано";
+
+            } catch (error) {
+                console.error("Помилка:", error);
+                alert("Не вдалося оновити інформацію про студента.");
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("jwtToken");
+            window.location.href = "/";
+        }
+
+        document.getElementById("refreshButton").addEventListener("click", refreshStudentInfo);
+        document.getElementById("logoutButton").addEventListener("click", logout);
+
+        refreshStudentInfo();
+    </script>
+</body>
+</html>

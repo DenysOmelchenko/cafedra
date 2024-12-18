@@ -1,0 +1,110 @@
+[
+  {
+    "ContainingType": "Kafedra.Controllers.HomeController",
+    "Method": "Welcome",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "Kafedra.Controllers.LoginController\u002BLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.LoginController",
+    "Method": "Register",
+    "RelativePath": "register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRequest",
+        "Type": "Kafedra.Controllers.LoginController\u002BRegistrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.StudentsManagmentController",
+    "Method": "GetStudentPage",
+    "RelativePath": "studentPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.StudentsManagmentController",
+    "Method": "UpdateStudentInfo",
+    "RelativePath": "studentPage/UpdateList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.StudentsManagmentController",
+    "Method": "LoadPage",
+    "RelativePath": "StudentsManagment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.StudentsManagmentController",
+    "Method": "UpdateList",
+    "RelativePath": "StudentsManagment/UpdateList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.StudentsManagmentController",
+    "Method": "UpdateStudent",
+    "RelativePath": "StudentsManagment/UpdateStudent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateRequest",
+        "Type": "Kafedra.Controllers.StudentsManagmentController\u002BUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kafedra.Controllers.LoginController",
+    "Method": "TockenCheck",
+    "RelativePath": "TokenCheck",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

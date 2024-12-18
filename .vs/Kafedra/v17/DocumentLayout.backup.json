@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\views\\studentsmanagment\\studentpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:views\\studentsmanagment\\studentpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\views\\studentsmanagment\\studentslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:views\\studentsmanagment\\studentslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\controllers\\studentsmanagmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:controllers\\studentsmanagmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|c:\\users\\arsen\\desktop\\c#\\kafedra\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E6D83274-A026-4388-9521-EBABB2A82791}|Kafedra.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\StudentsManagment\\StudentPage.cshtml",
+              "RelativeDocumentMoniker": "Views\\StudentsManagment\\StudentPage.cshtml",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\StudentsManagment\\StudentPage.cshtml",
+              "RelativeToolTip": "Views\\StudentsManagment\\StudentPage.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAIUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T23:52:57.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentsList.cshtml",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\StudentsManagment\\StudentsList.cshtml",
+              "RelativeDocumentMoniker": "Views\\StudentsManagment\\StudentsList.cshtml",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\StudentsManagment\\StudentsList.cshtml",
+              "RelativeToolTip": "Views\\StudentsManagment\\StudentsList.cshtml",
+              "ViewState": "AgIAALsAAAAAAAAAAAAmwNIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T19:55:27.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAADMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T16:52:59.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudentsManagmentController.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\StudentsManagmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentsManagmentController.cs",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\StudentsManagmentController.cs",
+              "RelativeToolTip": "Controllers\\StudentsManagmentController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:48:15.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAwwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:57:46.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T19:17:25.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwBcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:15:46.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Database\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Database\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Database\\AppDbContext.cs",
+              "RelativeToolTip": "Database\\AppDbContext.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAA6wEAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T17:20:52.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\arsen\\Desktop\\C#\\Kafedra\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:48:23.29Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

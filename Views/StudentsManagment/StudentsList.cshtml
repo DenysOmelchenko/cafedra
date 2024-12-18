@@ -1,0 +1,221 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Керування студентами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        .logout-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+            .logout-btn:hover {
+                background-color: #c82333;
+            }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            li:last-child {
+                border-bottom: none;
+            }
+
+        select, input {
+            margin: 0 5px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .update-btn {
+            background-color: #28a745;
+        }
+
+            .update-btn:hover {
+                background-color: #218838;
+            }
+    </style>
+</head>
+<body>
+    <button class="logout-btn" id="logoutButton">Вийти</button>
+    <div class="container">
+        <h1>Керування студентами</h1>
+        <button id="updateListButton">Оновити список</button>
+        <ul id="studentsList">
+            <!-- Список студентів буде додано тут -->
+        </ul>
+    </div>
+
+    <script>
+        async function loadStudents() {
+            const token = localStorage.getItem("jwtToken");
+
+            if (!token) {
+                alert("Токен відсутній. Будь ласка, увійдіть до системи.");
+                return;
+            }
+
+            try {
+                const response = await fetch("/StudentsManagment/UpdateList", {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+
+                if (!response.ok) {
+                    alert("Помилка авторизації. Перенаправлення на головну сторінку.");
+                    window.location.href = "/";
+                    return;
+                }
+
+                const studentsList = await response.json();
+                const studentsListElement = document.getElementById("studentsList");
+                studentsListElement.innerHTML = "";
+
+                studentsList.forEach(student => {
+                    const li = document.createElement("li");
+
+                    const nameElement = document.createElement("span");
+                    nameElement.textContent = `Ім'я: ${student.name}`;
+
+                    const statusSelect = document.createElement("select");
+                    statusSelect.innerHTML = `
+                                <option value="0" ${student.status === 0 ? "selected" : ""}>Активний</option>
+                                <option value="1" ${student.status === 1 ? "selected" : ""}>Очікує схвалення</option>
+                                <option value="2" ${student.status === 2 ? "selected" : ""}>Відрахований</option>
+                            `;
+
+                    const groupInput = document.createElement("input");
+                    groupInput.type = "text";
+                    groupInput.value = student.group;
+                    groupInput.placeholder = "Група";
+
+                    const updateButton = document.createElement("button");
+                    updateButton.textContent = "Оновити";
+                    updateButton.className = "update-btn";
+                    updateButton.addEventListener("click", async () => {
+                        await updateStudent(student.name, statusSelect.value, groupInput.value);
+                    });
+
+                    li.appendChild(nameElement);
+                    li.appendChild(statusSelect);
+                    li.appendChild(groupInput);
+                    li.appendChild(updateButton);
+
+                    studentsListElement.appendChild(li);
+                });
+
+            } catch (error) {
+                console.error("Помилка при отриманні списку студентів:", error);
+                alert("Помилка отримання даних. Спробуйте знову.");
+            }
+        }
+
+        async function updateStudent(studentName, status, group) {
+            const token = localStorage.getItem("jwtToken");
+
+            if (!token) {
+                alert("Токен відсутній. Будь ласка, увійдіть до системи.");
+                return;
+            }
+
+            const updateRequest = {
+                studentName: studentName,
+                status: parseInt(status),
+                group: group
+            };
+
+            try {
+                const response = await fetch("/StudentsManagment/UpdateStudent", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(updateRequest)
+                });
+
+                if (!response.ok) {
+                    alert("Не вдалося оновити студента.");
+                    return;
+                }
+
+                alert("Дані студента оновлено успішно!");
+                await loadStudents();
+
+            } catch (error) {
+                console.error("Помилка при оновленні студента:", error);
+                alert("Помилка оновлення студента.");
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("jwtToken");
+            window.location.href = "/";
+        }
+
+        document.getElementById("updateListButton").addEventListener("click", loadStudents);
+        document.getElementById("logoutButton").addEventListener("click", logout);
+
+        loadStudents();
+    </script>
+</body>
+</html>
